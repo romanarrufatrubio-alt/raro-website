@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import Header from '../components/Header.astro';
 ---
 <!doctype html>
 <html lang="en">
@@ -12,6 +13,9 @@ import "../styles/global.css";
 		<title>RARO - Strategic Studio</title>
 	</head>
 	<body>
-		<slot />
+		<Header />
+		<main>
+			<slot />
+		</main>
 	</body>
 </html>
