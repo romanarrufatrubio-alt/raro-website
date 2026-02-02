@@ -1,9 +1,12 @@
 ---
+
 ---
-<header class="text-white">
+<header class="sticky top-0 right-0 left-0 text-white z-100">
     <div class="mx-auto w-full py-16 px-12 flex items-center justify-between">
-        <a href="/" class="-tracking-widest text-7xl font-almarai font-light">RARO</a>
-        <nav class="flex gap-4 font-work-sans font-extralight text-2xl">
+        <a href="/">
+            <h1 class="-tracking-widest text-7xl font-almarai font-light">RARO</h1>
+        </a>
+        <nav class="flex gap-4 font-work-sans font-extralight text-2xl [&>a]:hover:text-accent">
             <a href="">Services</a>
             <a href="">About</a>
             <a href="">Work</a>
@@ -11,11 +14,4 @@
         </nav>
     </div> 
 </header>
-<style>
-    @reference "../styles/global.css";
-    
-    nav > a:hover {
-        @apply text-accent;
-    }
-</style>
 
