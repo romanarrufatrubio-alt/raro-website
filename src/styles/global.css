@@ -10,6 +10,6 @@
 @layer base {
   html,
   body {
-    @apply bg-black m-0 w-full h-full min-h-screen overflow-x-hidden overflow-y-auto;
+    @apply bg-black m-0 w-full overflow-x-hidden;
   }
 }

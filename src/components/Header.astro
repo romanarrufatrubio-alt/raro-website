@@ -1,17 +1,47 @@
 ---
-
+const { class: className } = Astro.props
 ---
-<header class="sticky top-0 right-0 left-0 text-white z-100">
-    <div class="mx-auto w-full py-16 px-12 flex items-center justify-between">
+<header id="site-header" class:list={[
+        "fixed top-0 right-0 left-0 text-white z-100 will-change-transform",
+        className
+    ]}>
+    <div class="flex mx-auto w-full py-6 px-4 md:py-12 md:px-8 items-center justify-between">
         <a href="/">
-            <h1 class="-tracking-widest text-7xl font-almarai font-light">RARO</h1>
+            <h1 class="-tracking-widest text-3xl sm:text-5xl md:text-7xl font-almarai font-light">RARO</h1>
         </a>
-        <nav class="flex gap-4 font-work-sans font-extralight text-2xl [&>a]:hover:text-accent">
-            <a href="">Services</a>
+        <nav class="hidden sm:flex gap-4 font-work-sans font-extralight text-xl md:text-2xl [&>a]:hover:text-accent">
+            <a href="#services">Services</a>
             <a href="">About</a>
             <a href="">Work</a>
             <a href="">Contact</a>
         </nav>
-    </div> 
+    </div>
 </header>
+<style>
+    #site-header {
+        transition: transform 0.6s cubic-bezier(0.83, 0, 0.17, 1);
+    }
+    #site-header.hidden-header {
+        transform: translateY(-100%);
+    }
+</style>
+<script is:inline>
+    const header = document.getElementById("site-header");
 
+    let prevScrollY = 0;
+    const THRESHOLD = 100;
+
+    function handleScroll() {
+        const currentScrollY = window.scrollY;
+        
+        if (currentScrollY > prevScrollY && currentScrollY > THRESHOLD) {
+            header.classList.add("hidden-header");
+        } else {
+            header.classList.remove("hidden-header");
+        }
+
+        prevScrollY = currentScrollY;
+    }
+
+    document.addEventListener('scroll', handleScroll, { passive: true, capture: true });
+</script>
