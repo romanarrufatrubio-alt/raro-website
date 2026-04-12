@@ -1,24 +1,28 @@
-<section class="relative min-h-screen w-full pt-46 pb-28 px-20">
-    <h2 class="absolute top-0 right-44 z-20 font-almarai text-9xl leading-26 text-white tracking-tight">
-        All about <br>motorcycles
-    </h2>
-    <div class="stack place-items-center">
-        <video autoplay loop muted class="scale-75">
-            <source src="/src/assets/hero.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-        </video>
-        <video autoplay loop muted class="">
-            <source src="/src/assets/hero.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-        </video>
-    </div>
+<section class="grid h-screen max-h-screen w-full grid-rows-[100vh]">
+  <video
+    autoplay
+    loop
+    muted
+    playsinline
+    class="col-start-1 row-start-1 h-screen w-full object-cover"
+  >
+    <source src="/src/assets/hero.webm" type="video/webm" />
+    Your browser does not support the video tag.
+  </video>
+  <div class="col-start-1 row-start-1 h-full p-[16vw] md:p-[8vw]">
+    <video autoplay loop muted playsinline class="h-full w-full object-cover">
+      <source src="/src/assets/hero.webm" type="video/webm" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  <h2
+    class="text-accent col-start-1 row-start-1 translate-y-[4vw] self-end text-right selection:bg-white sm:-right-2 sm:-bottom-14"
+  >
+    Motorcycling<br />Strategic Studio
+  </h2>
+  <!-- <div class="col-start-1 row-start-1 content-center">
+    <h1 class="font-almarai text-center text-[20vw] font-light -tracking-widest text-white">
+      RARO
+    </h1>
+  </div> -->
 </section>
-<style>
-    .stack {
-        display: grid;
-    }
-
-    .stack > * {
-        grid-area: 1 / 1;
-    }
-</style>

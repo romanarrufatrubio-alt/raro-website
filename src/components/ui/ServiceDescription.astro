@@ -1,0 +1,15 @@
+---
+interface Props {
+  align?: 'right' | 'left';
+}
+const { align = 'left' } = Astro.props;
+---
+
+<p
+  class:list={[
+    'font-almarai text-accent text-[3vw] tracking-tighter text-pretty selection:bg-white md:text-[1.75vw] lg:text-[1.25vw]',
+    { 'text-right': align === 'right' },
+  ]}
+>
+  <slot />
+</p>

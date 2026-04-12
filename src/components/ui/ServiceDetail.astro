@@ -1,0 +1,10 @@
+---
+interface Props {
+  align?: 'right' | 'left';
+}
+const { align = 'left' } = Astro.props;
+---
+
+<ul class:list={['flex flex-col gap-2 md:gap-4', { 'items-end text-right': align === 'right' }]}>
+  <slot />
+</ul>

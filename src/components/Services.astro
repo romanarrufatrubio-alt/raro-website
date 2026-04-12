@@ -1,0 +1,122 @@
+---
+import ServiceContainer from './ui/ServiceContainer.astro';
+import ServiceDescription from './ui/ServiceDescription.astro';
+import ServiceDetail from './ui/ServiceDetail.astro';
+import ServiceDetailItem from './ui/ServiceDetailItem.astro';
+import ServiceHeading from './ui/ServiceHeading.astro';
+---
+
+<section>
+  <!-- Service #1 -->
+  <div class="relative isolate grid px-[8vw] py-[12vh] lg:px-[10vw]">
+    <div
+      class="absolute top-0 right-[4vw] -z-10 aspect-video w-[60vw] overflow-clip bg-white/20 lg:top-42"
+    >
+      <video
+        autoplay
+        loop
+        muted
+        playsinline
+        class="h-full w-full object-cover"
+        poster="/src/assets/spm.webp"
+      >
+        <source src="/src/assets/SPM.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <ServiceContainer>
+      <div class="row-start-1 content-center space-y-4 md:col-start-1 md:row-start-2 lg:space-y-16">
+        <ServiceHeading> Strategic <br /> Product <br /> Management </ServiceHeading>
+        <ServiceDescription>
+          Good products don't sell themselves, they need clarity. We help define what to build, who
+          it is for, and why it matters, turning market insights and specs into strong positioning
+          and smart go-to-market decisions.
+        </ServiceDescription>
+      </div>
+      <div class="row-start-2 md:col-start-2 md:content-end">
+        <ServiceDetail align="right">
+          <ServiceDetailItem> Market Intelligence </ServiceDetailItem>
+          <ServiceDetailItem> Competitive Analysis </ServiceDetailItem>
+          <ServiceDetailItem> Strategic Audience </ServiceDetailItem>
+          <ServiceDetailItem> Value Proposition </ServiceDetailItem>
+          <ServiceDetailItem> Positioning & Pricing </ServiceDetailItem>
+        </ServiceDetail>
+      </div>
+    </ServiceContainer>
+  </div>
+  <!-- Service #2 -->
+  <div class="relative isolate grid px-[8vw] py-[12vh] lg:px-[10vw]">
+    <div
+      class="absolute -top-20 left-[4vw] -z-10 aspect-9/16 h-[60vw] overflow-clip sm:-top-40 md:-top-20 md:h-[50vw]"
+    >
+      <video
+        autoplay
+        loop
+        muted
+        playsinline
+        class="h-full w-full object-cover"
+        poster="/src/assets/cbs.webp"
+      >
+        <source src="/src/assets/Creativity.mov" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <ServiceContainer>
+      <div class="content-end space-y-4 md:row-start-2 md:content-center lg:space-y-16">
+        <ServiceHeading> Growth & Expansion </ServiceHeading>
+        <ServiceDescription>
+          Growing is not just about going bigger, it's about going smarter. We help motorcycle
+          projects find the right way to scale and expand internationally, without losing what made
+          them special in the first place.
+        </ServiceDescription>
+      </div>
+      <div class="content-center md:col-start-2 md:row-start-2">
+        <ServiceDetail align="right">
+          <ServiceDetailItem> Growth Roadmap </ServiceDetailItem>
+          <ServiceDetailItem> Partnership Consulting </ServiceDetailItem>
+          <ServiceDetailItem> Scalability Audit </ServiceDetailItem>
+          <ServiceDetailItem> Market Expansion </ServiceDetailItem>
+        </ServiceDetail>
+      </div>
+    </ServiceContainer>
+  </div>
+  <!-- Service #3 -->
+  <div class="relative isolate grid px-[8vw] py-[12vh] lg:px-[10vw]">
+    <ServiceContainer>
+      <div
+        class="content-center justify-end space-y-4 md:col-span-2 md:col-start-2 md:self-end lg:space-y-16"
+      >
+        <ServiceHeading align="right"> Creativity & <br />Brand Strategy </ServiceHeading>
+        <ServiceDescription align="right">
+          We help motorcycle brands find their voice, and make sure it sounds like them everywhere.
+          From positioning to creative direction, we turn ideas and products into clear, distinctive
+          stories people actually want to follow.
+        </ServiceDescription>
+      </div>
+      <div class="row-start-2 md:col-span-2 md:col-start-1 md:content-end">
+        <ServiceDetail>
+          <ServiceDetailItem> Identity </ServiceDetailItem>
+          <ServiceDetailItem> Art Direction </ServiceDetailItem>
+          <ServiceDetailItem> Storytelling </ServiceDetailItem>
+          <ServiceDetailItem> Global Launch Direction </ServiceDetailItem>
+          <ServiceDetailItem> Content Strategy </ServiceDetailItem>
+        </ServiceDetail>
+      </div>
+    </ServiceContainer>
+    <div
+      class="absolute right-[4vw] bottom-14 -z-10 aspect-video w-[60vw] overflow-clip bg-white/20 md:bottom-0"
+    >
+      <video
+        autoplay
+        loop
+        muted
+        playsinline
+        class="h-full w-full object-cover"
+        poster="/src/assets/ge.webp"
+      >
+        <source src="/src/assets/G&E.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+</section>

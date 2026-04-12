@@ -1,15 +1,30 @@
-@import url("https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import 'tailwindcss';
 
 @theme {
-  --font-almarai: "Almarai", var(--font-sans);
-  --font-work-sans: "Work Sans", var(--font-sans);
+  --font-almarai: 'Almarai', var(--font-sans);
+  --font-work-sans: 'Work Sans', var(--font-sans);
   --color-accent: oklch(0.5843 0.2375 29.02);
 }
 
 @layer base {
   html,
   body {
-    @apply bg-black m-0 w-full overflow-x-hidden;
+    @apply m-0 w-full overflow-x-hidden bg-black;
+  }
+
+  h2 {
+    @apply font-almarai text-[11vw]/[7.85vw] tracking-tighter uppercase;
+  }
+
+  h3 {
+    @apply font-almarai text-[3.5vw] tracking-tighter uppercase md:text-[2vw];
+  }
+}
+
+@utility stack {
+  display: grid;
+  & > * {
+    grid-area: 1 / 1;
   }
 }
