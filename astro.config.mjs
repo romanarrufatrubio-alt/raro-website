@@ -8,4 +8,6 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+  site: 'https://romanarrufatrubio-alt.github.io',
+  base: '/raro-website',
 });
