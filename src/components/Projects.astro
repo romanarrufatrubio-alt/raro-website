@@ -7,11 +7,14 @@ const allProjects = (await getCollection('projects')).sort((a, b) => a.data.orde
 <section class="grid grid-cols-1 gap-8 px-[4vw] py-[32vw] md:grid-cols-2 md:gap-x-6 md:pb-[50vh]">
   {
     allProjects.map((it, i) => (
-      <a href={`/raro-website/projects/${it.id}`} class={`group ${i % 2 !== 0 ? 'md:translate-y-1/2' : ''}`}>
+      <a
+        href={`/raro-website/projects/${it.id}`}
+        class={`group ${i % 2 !== 0 ? 'md:translate-y-1/2' : ''}`}
+      >
         <div class="relative aspect-video overflow-clip">
           {it.data.thumbnail && (
             <img
-              src={`src/assets/${it.data.thumbnail}`}
+              src={`/raro-website/src/assets/${it.data.thumbnail}`}
               alt={it.data.title}
               class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
             />
