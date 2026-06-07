@@ -6,8 +6,20 @@ offeredServices:
   - Strategic Product Management
 year: 2020
 location: Valencia, Spain
-thumbnail: project.webp
-video: project.png
+thumbnail: project-2.webp
+room:
+  headline: Inside a top-tier global motorcycle strategy agency.
+  sub: Working with some of the most influential off-road and rally brands in the world.
+tension:
+  headline: Portfolios kept growing. Differentiation didn't.
+  sub: Brands were adding models year after year without a clear hierarchy or reason for each to exist.
+work:
+  headline: Translate rider reality into product specifications.
+  sub: Market research, benchmarking, trend analysis and target customer evaluation—feeding directly into which products should exist, where they should compete and how they should be configured.
+output:
+  headline: A product strategy the team could ship behind.
+  sub: Grounded in data, brand clarity and rider reality. Built to inform future off-road and rally line-ups at a global scale.
+visualLabel: visual del proyecto · panorámica off-road
 ---
 
 Within a custom motorcycle builder closely connected to the professional motor sport ecosystem, we worked at the intersection of product, brand and performance.

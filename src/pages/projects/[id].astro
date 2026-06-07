@@ -14,21 +14,667 @@ const { project } = Astro.props;
 const { Content } = await render(project);
 ---
 
+<!--
+<style>
+  .ctx {
+    width: 1440px;
+    padding: 80px 112px;
+    display: grid;
+    grid-template-columns: 60% 1fr;
+    gap: 32px 80px;
+    font-family: var(--font-almarai);
+  }
+  .ctx-title {
+    font-family: var(--font-almarai);
+    font-size: 52px;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    margin-bottom: 28px;
+    grid-column: 1;
+    text-wrap: balance;
+  }
+  .ctx-meta {
+    display: grid;
+    gap: 12px;
+    margin-bottom: 56px;
+  }
+  .ctx-meta-key {
+    font-family: var(--font-almarai);
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.5);
+  }
+  .ctx-meta-val {
+    font-family: var(--font-almarai);
+    font-size: 22px;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+  }
+  .ctx-right {
+    grid-column: 2;
+    grid-row: 1 / 4;
+    font-family: var(--font-almarai);
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 1.75;
+    color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .ctx-block {
+    grid-column: 1;
+    position: relative;
+  }
+  .ctx-block::before {
+    content: attr(data-tag);
+    position: absolute;
+    top: -22px;
+    left: 0;
+    font-family: var(--font-almarai);
+    font-size: 9px;
+    letter-spacing: 0.22em;
+    color: var(--color-accent);
+  }
+
+  /* ───── OPT A — Thesis + visual ───── */
+  .optA {
+    display: grid;
+    gap: 32px;
+  }
+  .optA-thesis-wrap {
+    padding: 28px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  }
+  .optA-eyebrow {
+    font-family: var(--font-almarai);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.4);
+    margin-bottom: 16px;
+  }
+  .optA-thesis {
+    font-family: var(--font-almarai);
+    font-size: 36px;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    text-wrap: pretty;
+  }
+  .optA-thesis em {
+    color: var(--color-accent);
+    font-style: normal;
+  }
+  .optA-visual {
+    aspect-ratio: 16/10;
+    background: #141414;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2a2a2a;
+    font-family: monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  /* ───── OPT B — Approach framework ───── */
+  .optB {
+    display: grid;
+    gap: 32px;
+  }
+  .optB-head {
+    font-family: var(--font-almarai);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.4);
+  }
+  .optB-steps {
+    display: grid;
+    gap: 0;
+  }
+  .optB-step {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    gap: 24px;
+    padding: 24px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    align-items: baseline;
+  }
+  .optB-step:first-of-type {
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+  }
+  .optB-step-num {
+    font-family: var(--font-almarai);
+    font-size: 32px;
+    line-height: 1;
+    color: var(--color-accent);
+    letter-spacing: -0.04em;
+  }
+  .optB-step-content {
+    display: grid;
+    gap: 6px;
+  }
+  .optB-step-label {
+    font-family: var(--font-almarai);
+    font-size: 22px;
+    letter-spacing: -0.03em;
+  }
+  .optB-step-desc {
+    font-family: var(--font-almarai);
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.6);
+  }
+  .optB-visual {
+    aspect-ratio: 16/9;
+    background: #141414;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2a2a2a;
+    font-family: monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    margin-top: 16px;
+  }
+
+  /* ───── OPT C — Insight/Output split ───── */
+  .optC {
+    display: grid;
+    gap: 24px;
+  }
+  .optC-head {
+    font-family: var(--font-almarai);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.4);
+  }
+  .optC-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+  }
+  .optC-cell {
+    padding: 28px;
+    display: grid;
+    gap: 14px;
+    align-content: start;
+  }
+  .optC-cell + .optC-cell {
+    border-left: 1px solid rgba(255, 255, 255, 0.15);
+  }
+  .optC-cell-label {
+    font-family: var(--font-almarai);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+  }
+  .optC-cell-title {
+    font-family: var(--font-almarai);
+    font-size: 22px;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    text-wrap: pretty;
+  }
+  .optC-cell-body {
+    font-family: var(--font-almarai);
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.65);
+  }
+  .optC-visual {
+    aspect-ratio: 21/9;
+    background: #141414;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2a2a2a;
+    font-family: monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  /* ───── OPT E — Proof points strip ───── */
+  .optE {
+    display: grid;
+    gap: 32px;
+  }
+  .optE-strip {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  }
+  .optE-cell {
+    padding: 24px 20px 24px 0;
+    display: grid;
+    gap: 8px;
+    align-content: start;
+  }
+  .optE-cell + .optE-cell {
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    padding-left: 24px;
+    padding-right: 20px;
+  }
+  .optE-cell-key {
+    font-family: var(--font-almarai);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.4);
+  }
+  .optE-cell-val {
+    font-family: var(--font-almarai);
+    font-size: 22px;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    text-wrap: pretty;
+  }
+  .optE-cell-val em {
+    color: var(--color-accent);
+    font-style: normal;
+  }
+  .optE-visual {
+    aspect-ratio: 16/9;
+    background: #141414;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2a2a2a;
+    font-family: monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  /* ───── OPT F — Mega thesis / editorial ───── */
+  .optF {
+    display: grid;
+    gap: 32px;
+  }
+  .optF-mark {
+    font-family: var(--font-almarai);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+  }
+  .optF-thesis {
+    font-family: var(--font-almarai);
+    font-size: 64px;
+    line-height: 0.92;
+    letter-spacing: -0.05em;
+    text-wrap: balance;
+    padding-bottom: 32px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  }
+  .optF-thesis em {
+    color: var(--color-accent);
+    font-style: normal;
+  }
+  .optF-byline {
+    font-family: var(--font-almarai);
+    font-size: 20px;
+    letter-spacing: -0.02em;
+    color: rgba(255, 255, 255, 0.6);
+    max-width: 80%;
+  }
+  .optF-visual {
+    aspect-ratio: 16/9;
+    background: #141414;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2a2a2a;
+    font-family: monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  /* ───── OPT G — Thesis + Proof points hybrid ───── */
+  .optG {
+    display: grid;
+    gap: 32px;
+  }
+  .optG-thesis-wrap {
+    padding: 28px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  }
+  .optG-eyebrow {
+    font-family: var(--font-almarai);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.4);
+    margin-bottom: 16px;
+  }
+  .optG-thesis {
+    font-family: var(--font-almarai);
+    font-size: 44px;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    text-wrap: balance;
+  }
+  .optG-thesis em {
+    color: var(--color-accent);
+    font-style: normal;
+  }
+  .optG-strip {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0;
+  }
+  .optG-cell {
+    padding: 24px 20px 0 0;
+    display: grid;
+    gap: 8px;
+    align-content: start;
+  }
+  .optG-cell + .optG-cell {
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    padding-left: 24px;
+    padding-right: 20px;
+  }
+  .optG-cell-key {
+    font-family: var(--font-almarai);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.4);
+  }
+  .optG-cell-val {
+    font-family: var(--font-almarai);
+    font-size: 22px;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    text-wrap: pretty;
+  }
+  .optG-visual {
+    aspect-ratio: 21/9;
+    background: #141414;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2a2a2a;
+    font-family: monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  /* ───── OPT H — Case anatomy (stacked editorial blocks) ───── */
+  .optH {
+    display: grid;
+    gap: 0;
+  }
+  .optH-row {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: 32px;
+    padding: 28px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    align-items: baseline;
+  }
+  .optH-row:first-child {
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+  }
+  .optH-key {
+    font-family: var(--font-almarai);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+  }
+  .optH-val {
+    font-family: var(--font-almarai);
+    font-size: 26px;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    text-wrap: pretty;
+  }
+  .optH-val em {
+    color: var(--color-accent);
+    font-style: normal;
+  }
+  .optH-sub {
+    font-family: var(--font-almarai);
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 6px;
+  }
+  .optH-visual {
+    aspect-ratio: 16/9;
+    background: #141414;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2a2a2a;
+    font-family: monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    margin-top: 32px;
+  }
+
+  /* ───── OPT I — Big stat / claim ───── */
+  .optI {
+    display: grid;
+    gap: 28px;
+  }
+  .optI-eyebrow {
+    font-family: var(--font-almarai);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.4);
+  }
+  .optI-mega {
+    font-family: var(--font-almarai);
+    font-size: 140px;
+    line-height: 0.85;
+    letter-spacing: -0.06em;
+    color: var(--color-accent);
+  }
+  .optI-mega-unit {
+    font-size: 60px;
+    letter-spacing: -0.04em;
+  }
+  .optI-claim {
+    font-family: var(--font-almarai);
+    font-size: 28px;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    max-width: 90%;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+  }
+  .optI-claim em {
+    color: var(--color-accent);
+    font-style: normal;
+  }
+  .optI-foot {
+    font-family: var(--font-almarai);
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.55);
+  }
+  .optI-visual {
+    aspect-ratio: 16/9;
+    background: #141414;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2a2a2a;
+    font-family: monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  /* "Coming soon" overlay for project 3 */
+  .coming-soon {
+    position: relative;
+  }
+  .coming-soon::after {
+    content: '// COMING SOON';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: var(--font-almarai);
+    font-size: 14px;
+    letter-spacing: 0.3em;
+    color: var(--color-accent);
+  }
+</style> -->
 <Layout>
   <div
     class="font-almarai grid min-h-screen grid-cols-1 gap-8 px-[8vw] pt-[12vh] pb-[12vh] text-white md:grid-cols-[60%_1fr] md:pt-[24vh] lg:px-[10vw]"
   >
-    <div class="space-y-4">
-      <h1 class="text-[4vh]/[5vh] md:text-[4vw]/[4.1vw]">{project.data.title}</h1>
-      <span class="">What</span>
-      {project.data.offeredServices.map((it) => <h3 class="text-accent uppercase">{it}</h3>)}
-      <span>When</span>
-      <h3 class="text-accent">{project.data.year}</h3>
-      <span>Where</span>
-      <h3 class="text-accent">{project.data.location}</h3>
+    <div class="space-y-16">
+      <div class="space-y-4">
+        <h1 class="text-[4vh]/[5vh] md:text-[4vw]/[4.1vw]">{project.data.title}</h1>
+        <span class="text-[1.5vh] text-white/50 lg:text-[1vw]">What</span>
+        {project.data.offeredServices.map((it) => <h3 class="text-accent uppercase">{it}</h3>)}
+        <span class="text-[1.5vh] text-white/50 lg:text-[1vw]">When</span>
+        <h3 class="text-accent">{project.data.year}</h3>
+        <span class="text-[1.5vh] text-white/50 lg:text-[1vw]">Where</span>
+        <h3 class="text-accent">{project.data.location}</h3>
+      </div>
+      <div class="mb-8">
+        <div class="text-accent mb-8 text-[1.5vh] uppercase lg:text-[1vw]">Case Anatomy</div>
+        <ul
+          class="grid grid-rows-3 gap-y-4 lg:grid-cols-[auto_1fr] lg:grid-rows-[auto_1fr] lg:gap-x-16"
+        >
+          <li class="grid grid-cols-subgrid lg:col-span-2 lg:row-span-2">
+            <span
+              class="text-accent text-[1.5vh] uppercase lg:col-start-1 lg:row-start-1 lg:self-end lg:text-[1vw]"
+            >
+              // The Room
+            </span>
+            <span class="text-[2vh] lg:col-start-2 lg:row-start-1 lg:text-[1.25vw]"
+              >{project.data.room.headline}</span
+            >
+            <p class="text-[1.75vh] text-white/50 lg:col-start-2 lg:row-start-2">
+              {project.data.room.sub}
+            </p>
+          </li>
+          <li class="grid grid-cols-subgrid gap-y-2 lg:col-span-2 lg:row-span-2">
+            <span
+              class="text-accent text-[1.5vh] uppercase lg:col-start-1 lg:row-start-1 lg:self-end lg:text-[1vw]"
+            >
+              // The Tension
+            </span>
+            <span class="text-[2vh] lg:col-start-2 lg:row-start-1 lg:text-[1.25vw]"
+              >{project.data.tension.headline}</span
+            >
+            <p class="text-[1.75vh] text-white/50 lg:col-start-2 lg:row-start-2">
+              {project.data.tension.sub}
+            </p>
+          </li>
+          <li class="grid grid-cols-subgrid gap-y-2 lg:col-span-2 lg:row-span-2">
+            <span
+              class="text-accent text-[1.5vh] uppercase lg:col-start-1 lg:row-start-1 lg:self-end lg:text-[1vw]"
+            >
+              // The Work
+            </span>
+            <span class="text-[2vh] lg:col-start-2 lg:row-start-1 lg:text-[1.25vw]"
+              >{project.data.work.headline}</span
+            >
+            <p class="text-[1.75vh] text-white/50 lg:col-start-2 lg:row-start-2">
+              {project.data.work.sub}
+            </p>
+          </li>
+          <li class="grid grid-cols-subgrid gap-y-2 lg:col-span-2 lg:row-span-2">
+            <span
+              class="text-accent text-[1.5vh] uppercase lg:col-start-1 lg:row-start-1 lg:self-end lg:text-[1vw]"
+            >
+              // The Output
+            </span>
+            <span class="text-[2vh] lg:col-start-2 lg:row-start-1 lg:text-[1.25vw]"
+              >{project.data.output.headline}</span
+            >
+            <p class="text-[1.75vh] text-white/50 lg:col-start-2 lg:row-start-2">
+              {project.data.output.sub}
+            </p>
+          </li>
+        </ul>
+      </div>
     </div>
     <div class="space-y-4 font-light text-pretty">
       <Content />
     </div>
   </div>
+  <!-- <div class="ctx">
+    <h1 class="ctx-title">{project.data.title}</h1>
+    <div class="ctx-meta">
+      <span class="ctx-meta-key">What</span>
+      {project.data.offeredServices.map((w) => <span class="ctx-meta-val">{w}</span>)}
+      <span class="ctx-meta-key" style={{ marginTop: 8 }}>When</span>
+      <span class="ctx-meta-val">{project.data.year}</span>
+      <span class="ctx-meta-key" style={{ marginTop: 8 }}>Where</span>
+      <span class="ctx-meta-val">{project.data.location}</span>
+    </div>
+    <div class="ctx-block">
+      <div class="optH">
+        <div class="optH-row">
+          <span class="optH-key">// The room</span>
+          <div>
+            <p class="optH-val">{project.data.room.headline}</p>
+            <p class="optH-sub">{project.data.room.sub}</p>
+          </div>
+        </div>
+        <div class="optH-row">
+          <span class="optH-key">// The tension</span>
+          <div>
+            <p class="optH-val">{project.data.tension.headline}</p>
+            <p class="optH-sub">{project.data.tension.sub}</p>
+          </div>
+        </div>
+        <div class="optH-row">
+          <span class="optH-key">// The work</span>
+          <div>
+            <p class="optH-val">{project.data.work.headline}</p>
+            <p class="optH-sub">{project.data.work.sub}</p>
+          </div>
+        </div>
+        <div class="optH-row">
+          <span class="optH-key">// The output</span>
+          <div>
+            <p class="optH-val">{project.data.output.headline}</p>
+            <p class="optH-sub">{project.data.output.sub}</p>
+          </div>
+        </div>
+        <div class="optH-visual">[ {project.data.visualLabel} ]</div>
+      </div>
+    </div>
+    <div class="ctx-right">
+      <Content />
+    </div>
+  </div> -->
 </Layout>

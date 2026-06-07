@@ -12,7 +12,23 @@ export const collections = {
       year: z.union([z.string(), z.number().int()]),
       location: z.string(),
       thumbnail: z.string(),
-      video: z.string(),
+      room: z.object({
+        headline: z.string(),
+        sub: z.string(),
+      }),
+      tension: z.object({
+        headline: z.string(),
+        sub: z.string(),
+      }),
+      work: z.object({
+        headline: z.string(),
+        sub: z.string(),
+      }),
+      output: z.object({
+        headline: z.string(),
+        sub: z.string(),
+      }),
+      visualLabel: z.string(),
     }),
   }),
 };
