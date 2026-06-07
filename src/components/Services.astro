@@ -5,14 +5,10 @@ import ServiceDetail from './ui/ServiceDetail.astro';
 import ServiceDetailItem from './ui/ServiceDetailItem.astro';
 import ServiceHeading from './ui/ServiceHeading.astro';
 
-import spmPoster from '../assets/spm.webp';
-import cbsPoster from '../assets/cbs.webp';
-import gePoster from '../assets/ge.webp';
-
 const base = import.meta.env.BASE_URL;
-const spmVideo = `${base}/assets/SPM.mp4`;
-const creativityVideo = `${base}/assets/Creativity.mov`;
-const geVideo = `${base}/assets/G&E.mp4`;
+const spmPoster = `${base}/assets/spm.webp`;
+const cbsPoster = `${base}/assets/cbs.webp`;
+const gePoster = `${base}/assets/ge.webp`;
 ---
 
 <section>
@@ -27,9 +23,9 @@ const geVideo = `${base}/assets/G&E.mp4`;
         muted
         playsinline
         class="h-full w-full object-cover"
-        poster={spmPoster.src}
+        poster={spmPoster}
       >
-        <source src={spmVideo} type="video/mp4" />
+        <!--<source src={spmVideo} type="video/mp4" />-->
         Your browser does not support the video tag.
       </video>
     </div>
@@ -64,9 +60,9 @@ const geVideo = `${base}/assets/G&E.mp4`;
         muted
         playsinline
         class="h-full w-full object-cover"
-        poster={cbsPoster.src}
+        poster={cbsPoster}
       >
-        <source src={creativityVideo} type="video/mp4" />
+        <!-- <source src={creativityVideo} type="video/mp4" /> -->
         Your browser does not support the video tag.
       </video>
     </div>
@@ -121,9 +117,9 @@ const geVideo = `${base}/assets/G&E.mp4`;
         muted
         playsinline
         class="h-full w-full object-cover"
-        poster={gePoster.src}
+        poster={gePoster}
       >
-        <source src={geVideo} type="video/mp4" />
+        <!-- <source src={geVideo} type="video/mp4" /> -->
         Your browser does not support the video tag.
       </video>
     </div>
