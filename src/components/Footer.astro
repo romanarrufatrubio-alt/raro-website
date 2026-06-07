@@ -1,6 +1,6 @@
-<footer class="bg-accent selection:bg-white">
+<footer class="bg-accent font-almarai selection:bg-white">
   <div class="mx-auto flex flex-col px-6 py-10 md:px-12 lg:px-20">
-    <div
+    <!-- <div
       class="flex flex-col justify-between gap-16 md:grid md:grid-cols-2 lg:flex-row lg:items-center"
     >
       <div>
@@ -29,25 +29,54 @@
           </svg>
         </a>
       </div>
+    </div> -->
+
+    <div class="grid grid-rows-2 gap-8 lg:grid-cols-[1fr_auto] lg:grid-rows-1">
+      <div>
+        <h3 class="text-3xl font-medium normal-case md:text-5xl lg:text-6xl">
+          Got a story worth riding? <br /> Let's build it together.
+        </h3>
+      </div>
+      <div class="flex flex-col items-end justify-end gap-0.5">
+        <span class="text-xs tracking-[0.35em] uppercase"> Get in touch </span>
+        <a
+          href="mailto:hello@beraro.com"
+          class="group inline-flex items-center gap-2 text-xl sm:text-2xl md:text-3xl lg:text-4xl"
+        >
+          <span>hello@beraro.com</span>
+
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            class="size-4 transition-transform duration-300 group-hover:translate-x-1"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"></path>
+          </svg>
+        </a>
+      </div>
     </div>
 
     <div class="my-10 h-px w-full bg-black/30"></div>
 
-    <div
-      class="flex flex-col gap-8 text-sm tracking-[0.3em] uppercase md:flex-row md:items-end md:justify-between"
-    >
+    <div class="grid grid-rows-3 gap-8 md:grid-cols-[auto_1fr_auto] md:grid-rows-1">
       <div>
-        <span class="font-almarai text-4xl font-medium tracking-tight md:text-5xl"> RARO </span>
+        <span class="text-4xl font-medium tracking-tight md:text-5xl">RARO</span>
       </div>
-
-      <div class="text-center">© 2026 · Spain based. Impacting worldwide.</div>
-
+      <div class="text-center text-xs md:content-center md:text-sm">
+        <span class="tracking-[0.3em] uppercase">
+          © 2026 · Spain based. <br class="md:hidden" /> Impacting worldwide.
+        </span>
+      </div>
       <nav>
-        <ul class="flex flex-wrap items-center gap-6 md:justify-end">
+        <ul
+          class="mx-auto flex flex-col items-center gap-2 text-xs tracking-[0.3em] uppercase md:items-end md:text-sm"
+        >
           <li>
             <a href="#" class="transition-opacity hover:opacity-70"> Instagram </a>
           </li>
-
           <li>
             <a href="#" class="transition-opacity hover:opacity-70"> LinkedIn </a>
           </li>
