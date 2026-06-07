@@ -1,3 +1,7 @@
+---
+const heroVideo = `${import.meta.env.BASE_URL}/assets/hero.webm`;
+---
+
 <section class="grid h-screen max-h-screen w-full grid-rows-[100vh]">
   <video
     autoplay
@@ -6,12 +10,12 @@
     playsinline
     class="col-start-1 row-start-1 h-screen w-full object-cover"
   >
-    <source src="/raro-website/src/assets/hero.webm" type="video/webm" />
+    <source src={heroVideo} type="video/webm" />
     Your browser does not support the video tag.
   </video>
   <div class="col-start-1 row-start-1 h-full p-[16vw] md:p-[8vw]">
     <video autoplay loop muted playsinline class="h-full w-full object-cover">
-      <source src="/raro-website/src/assets/hero.webm" type="video/webm" />
+      <source src={heroVideo} type="video/webm" />
       Your browser does not support the video tag.
     </video>
   </div>
@@ -20,9 +24,4 @@
   >
     Motorcycling<br />Strategic Studio
   </h2>
-  <!-- <div class="col-start-1 row-start-1 content-center">
-    <h1 class="font-almarai text-center text-[20vw] font-light -tracking-widest text-white">
-      RARO
-    </h1>
-  </div> -->
 </section>

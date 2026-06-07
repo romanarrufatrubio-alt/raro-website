@@ -4,6 +4,15 @@ import ServiceDescription from './ui/ServiceDescription.astro';
 import ServiceDetail from './ui/ServiceDetail.astro';
 import ServiceDetailItem from './ui/ServiceDetailItem.astro';
 import ServiceHeading from './ui/ServiceHeading.astro';
+
+import spmPoster from '../assets/spm.webp';
+import cbsPoster from '../assets/cbs.webp';
+import gePoster from '../assets/ge.webp';
+
+const base = import.meta.env.BASE_URL;
+const spmVideo = `${base}/assets/SPM.mp4`;
+const creativityVideo = `${base}/assets/Creativity.mov`;
+const geVideo = `${base}/assets/G&E.mp4`;
 ---
 
 <section>
@@ -18,9 +27,9 @@ import ServiceHeading from './ui/ServiceHeading.astro';
         muted
         playsinline
         class="h-full w-full object-cover"
-        poster="/raro-website/src/assets/spm.webp"
+        poster={spmPoster.src}
       >
-        <source src="/raro-website/src/assets/SPM.mp4" type="video/mp4" />
+        <source src={spmVideo} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
     </div>
@@ -55,9 +64,9 @@ import ServiceHeading from './ui/ServiceHeading.astro';
         muted
         playsinline
         class="h-full w-full object-cover"
-        poster="/raro-website/src/assets/cbs.webp"
+        poster={cbsPoster.src}
       >
-        <source src="/raro-website/src/assets/Creativity.mov" type="video/mp4" />
+        <source src={creativityVideo} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
     </div>
@@ -112,9 +121,9 @@ import ServiceHeading from './ui/ServiceHeading.astro';
         muted
         playsinline
         class="h-full w-full object-cover"
-        poster="/raro-website/src/assets/ge.webp"
+        poster={gePoster.src}
       >
-        <source src="/raro-website/src/assets/G&E.mp4" type="video/mp4" />
+        <source src={geVideo} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
     </div>
