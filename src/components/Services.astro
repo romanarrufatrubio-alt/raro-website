@@ -6,8 +6,11 @@ import ServiceDetailItem from './ui/ServiceDetailItem.astro';
 import ServiceHeading from './ui/ServiceHeading.astro';
 
 const base = import.meta.env.BASE_URL;
+const spmVideo = `${base}/assets/spm.webm`;
 const spmPoster = `${base}/assets/spm.webp`;
+const cbsVideo = `${base}/assets/cbs.webm`;
 const cbsPoster = `${base}/assets/cbs.webp`;
+const geVideo = `${base}/assets/ge.webm`;
 const gePoster = `${base}/assets/ge.webp`;
 ---
 
@@ -17,15 +20,8 @@ const gePoster = `${base}/assets/ge.webp`;
     <div
       class="absolute top-0 right-[4vw] -z-10 aspect-video w-[60vw] overflow-clip bg-white/20 lg:top-42"
     >
-      <video
-        autoplay
-        loop
-        muted
-        playsinline
-        class="h-full w-full object-cover"
-        poster={spmPoster}
-      >
-        <!--<source src={spmVideo} type="video/mp4" />-->
+      <video autoplay loop muted playsinline class="h-full w-full object-cover" poster={spmPoster}>
+        <source src={spmVideo} type="video/webm" />
         Your browser does not support the video tag.
       </video>
     </div>
@@ -54,15 +50,8 @@ const gePoster = `${base}/assets/ge.webp`;
     <div
       class="absolute -top-20 left-[4vw] -z-10 aspect-9/16 h-[60vw] overflow-clip sm:-top-40 md:-top-20 md:h-[50vw]"
     >
-      <video
-        autoplay
-        loop
-        muted
-        playsinline
-        class="h-full w-full object-cover"
-        poster={cbsPoster}
-      >
-        <!-- <source src={creativityVideo} type="video/mp4" /> -->
+      <video autoplay loop muted playsinline class="h-full w-full object-cover" poster={cbsPoster}>
+        <source src={cbsVideo} type="video/webm" />
         Your browser does not support the video tag.
       </video>
     </div>
@@ -111,15 +100,8 @@ const gePoster = `${base}/assets/ge.webp`;
     <div
       class="absolute right-[4vw] bottom-14 -z-10 aspect-video w-[60vw] overflow-clip bg-white/20 md:bottom-0"
     >
-      <video
-        autoplay
-        loop
-        muted
-        playsinline
-        class="h-full w-full object-cover"
-        poster={gePoster}
-      >
-        <!-- <source src={geVideo} type="video/mp4" /> -->
+      <video autoplay loop muted playsinline class="h-full w-full object-cover" poster={gePoster}>
+        <source src={geVideo} type="video/webm" />
         Your browser does not support the video tag.
       </video>
     </div>
