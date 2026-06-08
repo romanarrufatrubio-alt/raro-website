@@ -5,7 +5,7 @@ offeredServices:
   - Strategic Product Management
 year: 2023
 location: Salzburg, Austria
-thumbnail: project-1.webp
+thumbnail: project-2.webp
 room:
   headline: Inside a top-tier global motorcycle strategy agency.
   sub: Working with some of the most influential off-road and rally brands in the world.

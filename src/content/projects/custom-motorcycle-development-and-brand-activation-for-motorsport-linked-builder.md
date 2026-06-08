@@ -6,7 +6,7 @@ offeredServices:
   - Strategic Product Management
 year: 2020
 location: Valencia, Spain
-thumbnail: project-2.webp
+thumbnail: project-3.webp
 room:
   headline: Inside a top-tier global motorcycle strategy agency.
   sub: Working with some of the most influential off-road and rally brands in the world.
