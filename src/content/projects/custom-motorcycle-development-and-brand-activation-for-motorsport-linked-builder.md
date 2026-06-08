@@ -1,6 +1,6 @@
 ---
 title: Custom Motorcycle Development & Brand Activation for a MotorSport-Linked Builder
-order: 2
+order: 4
 offeredServices:
   - Creativity & Brand Strategy
   - Strategic Product Management
@@ -19,7 +19,6 @@ work:
 output:
   headline: A product strategy the team could ship behind.
   sub: Grounded in data, brand clarity and rider reality. Built to inform future off-road and rally line-ups at a global scale.
-visualLabel: visual del proyecto · panorámica off-road
 ---
 
 Within a custom motorcycle builder closely connected to the professional motor sport ecosystem, we worked at the intersection of product, brand and performance.

@@ -28,7 +28,6 @@ export const collections = {
         headline: z.string(),
         sub: z.string(),
       }),
-      visualLabel: z.string(),
     }),
   }),
 };

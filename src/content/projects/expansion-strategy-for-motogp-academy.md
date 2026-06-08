@@ -1,8 +1,8 @@
 ---
-title: Electric Mobility Product Strategy for a Global Consumer Tech Brand
-order: 3
+title: Expansion Strategy for an Elite MotoGP Riders Academy
+order: 2
 offeredServices:
-  - Strategic Product Management
+  - Growth & Expansion
 year: 2026
 location: Confidential
 thumbnail: project-3.webp
