@@ -11,7 +11,7 @@ room:
   sub: A highly renowned racing team and its riders academy, facing global demand to replicate, leverage and tap into its know-how.
 tension:
   headline: Growth was inevitable. Losing control was not.
-  sub: Requests came in from all over the world. The risk: scaling fast, and diluting everything the team had built on track.
+  sub: Requests came in from all over the world. The risk— scaling fast, and diluting everything the team had built on track.
 work:
   headline: Full immersion before any framework.
   sub: We mapped financials, brand DNA, operational limits and long-term vision—then assessed every potential partner as a brand custodian, not just an investor.
